@@ -5,3 +5,22 @@
  
  ## Under Construction
 
+## Installation Nodejs
+
+```
+npm init
+```
+
+```
+npm install --save express
+```
+
+```
+npm install --save socket.io
+```
+
+## Installatio nodemon
+
+```
+npm install nodemon
+```
