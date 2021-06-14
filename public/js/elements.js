@@ -3,7 +3,7 @@ export const getIncomingCallDialog = (
   acceptCallHandler,
   rejectCallHandler
 ) => {
-    
+
     console.log("getting incoming call dialog");
     const dialog = document.createElement("div");
     dialog.classList.add("dialog_wrapper");
@@ -47,6 +47,8 @@ export const getIncomingCallDialog = (
     dialogContent.appendChild(imageContainer);
     dialogContent.appendChild(buttonContainer);
 
-    const dialogHTML = document.getElementById("dialog");
-    dialogHTML.appendChild(dialog);
+/*     const dialogHTML = document.getElementById("dialog");
+    dialogHTML.appendChild(dialog); */
+
+    return dialog;
 };

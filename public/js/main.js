@@ -2,7 +2,7 @@ import * as store from './store.js';
 import * as wss from './wss.js';
 import * as webRTCHandler from './webRTCHandler.js';
 import * as constants from './constants.js';
-import { getIncomingCallDialog } from './elements.js';
+/* import { getIncomingCallDialog } from './elements.js'; */
 
 // initialization of socketIO connection
 const socket = io("/");
@@ -49,4 +49,5 @@ personalCodeVideoButton.addEventListener("click", () => {
 
     webRTCHandler.sendPreOffer(callType, calleePersonalCode);
 });
-getIncomingCallDialog('VIDEO', () => {}, () => {})
+
+//getIncomingCallDialog('VIDEO', () => {}, () => {})
