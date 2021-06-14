@@ -22,7 +22,7 @@ export const handlePreOffer = (data) => {
     const { callType, callerSocketId } = data;
 
     connectedUserDetails = {
-        socketId = callerSocketId,
+        socketId: callerSocketId,
         callType,
     };
 
