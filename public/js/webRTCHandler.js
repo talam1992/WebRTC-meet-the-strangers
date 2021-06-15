@@ -8,12 +8,19 @@ export const sendPreOffer = (callType, calleePersonalCode) => {
     //console.log('pre offer function executed');
     //console.log(callType);
     //console.log(calleePersonalCode);
-    const data = {
+    connectedUserDetails = {
         callType,
-        calleePersonalCode
+        socketId: calleePersonalCode
     };
 
-    wss.sendPreOffer(data);
+    if (callType === constants.callType.CHAT_PERSONAL_CODE || callType === constants.callType.VIDEO_PERSONAL_CODE) {
+        const data = {
+            callType,
+            calleePersonalCode
+        };
+        ui.showCallingDialog(callingDialogRejectedHandler);
+        wss.sendPreOffer(data);
+    };
 };
 
 export const handlePreOffer = (data) => {
@@ -40,4 +47,8 @@ const acceptCallHandler = () => {
 
 const rejectCallHandler = () => {
     console.log('call rejected')
-}
+};
+
+const callingDialogRejectedHandler = () => {
+    console.log('rejecting the call')
+};
