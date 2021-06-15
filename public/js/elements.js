@@ -49,6 +49,15 @@ export const getIncomingCallDialog = (
 /*     const dialogHTML = document.getElementById("dialog");
     dialogHTML.appendChild(dialog); */
 
+    
+    acceptCallButton.addEventListener('click', () => {
+        acceptCallHandler();
+    });
+
+    rejectCallButton.addEventListener('click', () => {
+        rejectCallHandler();
+    });
+
     return dialog;
 };
 
