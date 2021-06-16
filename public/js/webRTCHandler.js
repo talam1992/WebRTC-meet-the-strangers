@@ -44,6 +44,7 @@ export const handlePreOffer = (data) => {
 const acceptCallHandler = () => {
     console.log('call accepted');
     sendPreOfferAnswer(constants.preOfferAnswer.CALL_ACCEPTED);
+    ui.showCallElements(connectedUserDetails.callType);
 };
 
 const rejectCallHandler = () => {
@@ -87,6 +88,7 @@ export const handlePreOfferAnswer = (data) => {
     }
 
     if (preOfferAnswer === constants.preOfferAnswer.CALL_ACCEPTED) {
+        ui.showCallElements(connectedUserDetails.callType);
         // send webRTC offer 
     }
 }
