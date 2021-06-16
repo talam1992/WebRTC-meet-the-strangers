@@ -59,6 +59,31 @@ const sendPreOfferAnswer = (preOfferAnswer) => {
     const data = {
         callerSocketId: connectedUserDetails.socketId,
         preOfferAnswer
-    }
+    };
+    ui.removeAllDialogs();
     wss.sendPreOfferAnswer(data);
 };
+
+const handlePreOfferAnswer = (data) => {
+    const { preOfferAnswer } = data;
+    //console.log('pre offer answer came');
+    //console.log(data)
+    ui.removeAllDialogs();
+
+    if (preOfferAnswer === constants.preOfferAnswer.CALLEE_NOT_FOUND) {
+        // Show dialog that callee has not been found 
+
+    }
+
+    if (preOfferAnswer === constants.preOfferAnswer.CALL_UNAVAILABLE) {
+        // show dialog that callee is not able to connect
+    }
+
+    if (preOfferAnswer === constants.preOfferAnswer.CALL_REJECTED) {
+        // show dialog that call is rejected by the callee
+    }
+
+    if (preOfferAnswer === constants.preOfferAnswer.CALL_ACCEPTED) {
+        // send webRTC offer 
+    }
+}

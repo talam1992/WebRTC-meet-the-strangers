@@ -38,3 +38,8 @@ export const showCallingDialog = (rejectCallHnadler) => {
 
     dialog.appendChild(callingDialog);
 };
+
+export const removeAllDialogs = () => {
+    const dialog = document.getElementById('dialog');
+    dialog.querySelectorAll('*').forEach((dialog) => dialog.remove());
+}
