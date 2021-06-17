@@ -62,7 +62,7 @@ const createPeerConnection = () => {
         const localStream = store.getState().localStream;
 
         for (const track of localStream.getTracks()) {
-            peerConnection.addTrack(track, localStream)
+            peerConnection.addTrack(track, localStream);
         }
     }
 };
