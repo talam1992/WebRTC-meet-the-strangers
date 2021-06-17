@@ -8,6 +8,15 @@ export const updatePersonalCode = (personalCode) => {
   personalCodeParagraph.innerHTML = personalCode;
 };
 
+export const updateLocalVideo = (stream) => {
+    const localVideo = document.getElementById('local_video');
+    localVideo.srcObject = stream;
+
+    localVideo.addEventListener('loadedmetadata', () => {
+        localVideo.play();
+    })
+}
+
 export const showIncomingCallDialog = (
   callType,
   acceptCallHandler,

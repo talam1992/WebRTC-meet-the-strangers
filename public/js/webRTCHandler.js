@@ -1,8 +1,25 @@
 import * as wss from './wss.js';
 import * as constants from './constants.js';
 import * as ui from './ui.js'
+import * as store from './store.js';
 
 let connectedUserDetails;
+
+const defaultConstrainst = {
+    audio: true,
+    video: true
+}
+
+export const getLocalPreview = () => {
+    navigator.mediaDevices.getUserMedia(defaultConstrainst)
+    .then((stream) => {
+        ui.updateLocalVideo(stream);
+        store.setLocalStream(stream);  
+    }).catch((err => {
+        console.log('error occured when trying to get an access to camera');
+        console.log(err);
+    }))
+}
 
 export const sendPreOffer = (callType, calleePersonalCode) => {
     //console.log('pre offer function executed');
