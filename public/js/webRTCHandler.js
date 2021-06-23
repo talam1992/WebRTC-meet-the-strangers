@@ -283,3 +283,19 @@ export const switchBetweenCameraAndScreenSharing = async (
     }
   }
 };
+
+
+// hangup
+
+export const handleHangUp = () => {
+  console.log('finishing the call')
+  const data = {
+    connectedUserSocketId: connectedUserDetails.socketId
+  }
+
+  wss.sendUserHangUp(data);
+};
+
+export const handleConnectedUserHangedUp = () => {
+  console.log('connected peer hanged up')
+}
