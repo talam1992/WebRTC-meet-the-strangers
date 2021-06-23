@@ -113,3 +113,15 @@ stopRecordingButton.addEventListener("click", () => {
   recordingUtils.stopRecording();
   ui.resetRecordingButtons();
 });
+
+const pauseRecordingButton = document.getElementById("pause_recording_button");
+pauseRecordingButton.addEventListener("click", () => {
+  recordingUtils.pauseRecording();
+  ui.switchRecordingButton(true);
+});
+
+const resumRecordingButton = document.getElementById("resume_recording_button");
+resumRecordingButton.addEventListener("click", () => {
+  recordingUtils.resumeRecording();
+  ui.switchRecordingButton();
+})

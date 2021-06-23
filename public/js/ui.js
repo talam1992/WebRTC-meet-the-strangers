@@ -184,6 +184,19 @@ export const resetRecordingButtons = () => {
   showElement(startRecordingButton);
 };
 
+export const switchRecordingButton = (switchResumeButton = false) => {
+  const resumeButton = document.getElementById('resume_recording_button');
+  const pauseButton = document.getElementById('pause_recording_button');
+
+  if (switchResumeButton) {
+    hideElement(pauseButton);
+    showElement(resumeButton);
+  } else {
+    hideElement(resumeButton);
+    showElement(pauseButton);
+  }
+}
+
 // ui helper functions
 
 const enableDashboard = () => {
