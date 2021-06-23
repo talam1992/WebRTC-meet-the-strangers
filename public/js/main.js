@@ -3,6 +3,7 @@ import * as wss from "./wss.js";
 import * as webRTCHandler from "./webRTCHandler.js";
 import * as constants from "./constants.js";
 import * as ui from "./ui.js";
+import * as recordingUtils from "./recordingUtils.js";
 
 // initialization of socketIO connection
 const socket = io("/");
@@ -97,4 +98,18 @@ sendMessageButton.addEventListener("click", () => {
   webRTCHandler.sendMessageUsingDataChannel(message);
   ui.appendMessage(message, true);
   newMessageInput.value = "";
+});
+
+// recording
+
+const startRecordingButton = document.getElementById("start_recording_button");
+startRecordingButton.addEventListener("click", () => {
+  recordingUtils.startRecording();
+  ui.showRecordingPanel();
+});
+
+const stopRecordingButton = document.getElementById("stop_recording_button");
+stopRecordingButton.addEventListener("click", () => {
+  recordingUtils.stopRecording();
+  ui.resetRecordingButtons();
 });
