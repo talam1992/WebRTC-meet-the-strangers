@@ -56,6 +56,6 @@ export const sendDataUsingWebRTCSignaling = (data) => {
   socketIO.emit("webRTC-signaling", data);
 };
 
-export const sendUserHangUp = (data) => {
+export const sendUserHangedUp = (data) => {
   socketIO.emit("user-hanged-up", data);
 };
