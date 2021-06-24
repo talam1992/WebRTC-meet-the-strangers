@@ -315,8 +315,7 @@ const closePeerConnectionAndResetState = () => {
   ) {
     store.getState().localStream.getVideoTracks()[0].enabled = true;
     store.getState().localStream.getAudioTracks()[0].enabled = true;
-
-    ui.updateUIAfterHangUp(connectedUserDetails.callType);
-    connectedUserDetails = null;
   }
+  ui.updateUIAfterHangUp(connectedUserDetails.callType);
+  connectedUserDetails = null;
 };
