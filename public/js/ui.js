@@ -270,3 +270,4 @@ const showElement = (element) => {
     element.classList.remove("display_none");
   }
 };
+
