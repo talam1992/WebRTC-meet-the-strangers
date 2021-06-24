@@ -288,14 +288,35 @@ export const switchBetweenCameraAndScreenSharing = async (
 // hangup
 
 export const handleHangUp = () => {
-  console.log('finishing the call')
+  //console.log('finishing the call')
   const data = {
     connectedUserSocketId: connectedUserDetails.socketId
   }
 
   wss.sendUserHangUp(data);
+  closePeerConnectionAndResetState();
 };
 
 export const handleConnectedUserHangedUp = () => {
-  console.log('connected peer hanged up')
-}
+  //console.log('connected peer hanged up');
+  closePeerConnectionAndResetState();
+};
+
+const closePeerConnectionAndResetState = () => {
+  if (peerConection) {
+    peerConection.close();
+    peerConection = null;
+  }
+
+  // Active mic and camera
+  if (
+    connectedUserDetails.callType === constants.callType.VIDEO_PERSONAL_CODE || 
+    connectedUserDetails.callType === constants.callType.VIDEO_STRANGER
+  ) {
+    store.getState().localStream.getVideoTracks()[0].enabled = true;
+    store.getState().localStream.getAudioTracks()[0].enabled = true;
+
+    ui.updateUIAfterHangUp(connectedUserDetails.callType);
+    connectedUserDetails = null;
+  }
+};
