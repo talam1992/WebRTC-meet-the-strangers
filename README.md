@@ -43,4 +43,5 @@ npm start
 
 https://webrtcmeetthestranger.herokuapp.com/
 
-
+## WebRTC Meet the Strangers
+![WebRTC Meet the Strangers](img/WebRTC-meet-the-strangers.jpg)
