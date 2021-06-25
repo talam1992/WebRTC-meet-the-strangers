@@ -1,4 +1,4 @@
-# WebRTC-meet-the-strangers
+# WebRTC Meet the Strangers
  Omegle clone with direct calls possibility with vanilla JavaScript
 
  ### Author: Timothy Lam
