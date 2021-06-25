@@ -103,11 +103,17 @@ export const removeAllDialogs = () => {
 };
 
 export const showCallElements = (callType) => {
-  if (callType === constants.callType.CHAT_PERSONAL_CODE) {
+  if (
+    callType === constants.callType.CHAT_PERSONAL_CODE || 
+    callType === constants.callType.CHAT_STRANGER
+  ) {
     showChatCallElements();
   }
 
-  if (callType === constants.callType.VIDEO_PERSONAL_CODE) {
+  if (
+    callType === constants.callType.VIDEO_PERSONAL_CODE ||
+    callType === constants.callType.VIDEO_STRANGER
+  ) {
     showVideoCallElements();
   }
 };
