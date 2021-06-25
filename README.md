@@ -23,12 +23,6 @@ npm install --save socket.io
 npm install nodemon
 ```
 
-## Running WebRTC-Conference
-
-```
-npm start
-```
-
 ## How to use 
 
 ```
