@@ -94,6 +94,28 @@ io.on("connection", (socket) => {
     console.log(connectedPeersStrangers)
   });
 
+  socket.on("get-stranger-socket-id", () => {
+    let randomStrangerSocketId;
+    const filterConnectedPeersStrangers = connectedPeersStrangers.filter(
+      (peerSocketId) => peerSocketId !== socket.id
+    );
+
+    if (filterConnectedPeersStrangers.length > 0) {
+      randomStrangerSocketId = 
+        filterConnectedPeersStrangers[
+          Math.floor(Math.random() * filterConnectedPeersStrangers.length)
+      ];
+    } else {
+      randomStrangerSocketId = null;
+    }
+    
+    const data = {
+      randomStrangerSocketId
+    };
+
+    io.to(socket.id).emit("stranger-socket-id", data);
+  });
+
   socket.on("disconnect", () => {
     console.log("user disconnected");
 
