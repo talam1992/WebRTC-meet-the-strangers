@@ -44,7 +44,7 @@ npm start
 https://webrtcmeetthestranger.herokuapp.com/
 
 ## WebRTC Architecture
-![WebRTC Architecture](img/WebRTC-Architectire.png)
+![WebRTC Architecture](img/WebRTC-Architecture.png)
 
 ## WebRTC Meet the Strangers
 ![WebRTC Meet the Strangers](img/WebRTC-meet-the-strangers.jpg)
